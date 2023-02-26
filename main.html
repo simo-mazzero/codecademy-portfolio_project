@@ -10,7 +10,23 @@
 </head>
 
 <body>
-    <nav></nav>
+    <nav>
+        <h2 id="logo">Simone Mazzero</h2>
+        <ul class="navigation-items">
+            <li class="navigation-item">
+                <a href="#about-me">About me</a>
+            </li>
+            <li class="navigation-item">
+                <a href="#projects">Projects</a>
+            </li>
+            <li class="navigation-item">
+                <a href="#skills">Skills</a>
+            </li>
+            <li class="navigation-item">
+                <a href="./contacts.html">Contacts</a>
+            </li>
+        </ul>
+    </nav>
     <main>
         <section id="about-me">
             <div class="about-me-container">
@@ -29,6 +45,151 @@
                     works, hope you don't judge it too harshly</p>
             </div>
             <img src="./myself.jpg" alt="A picture of myself in the mountains" class="portrait">
+        </section>
+        <section id="projects">
+            <h2>Projects</h2>
+            <summary class="project-title">
+                <h3>Challenge Project: Mysterious Organism</h3>
+                <p>A JavaScript project to find matching DNA from organisms</p>
+                <button class="show-code">See the code</button>
+                <pre>
+                    <code>
+                        // Returns a random DNA base
+                        const returnRandBase = () => {
+                        const dnaBases = ["A", "T", "C", "G"];
+                        return dnaBases[Math.floor(Math.random() * 4)];
+                        };
+                        
+                        // Returns a random single strand of DNA containing 15 bases
+                        const mockUpStrand = () => {
+                        const newStrand = [];
+                        for (let i = 0; i < 15; i++) { newStrand.push(returnRandBase()); } return newStrand; }; const pAequorFactory=(num,
+                            arr)=> {
+                            return {
+                            specimenNum: num,
+                            dna: arr,
+                            mutate() {
+                            let r = Math.floor(Math.random() * 15);
+                            let rBase = returnRandBase();
+                            if (this.dna[r] === rBase) {
+                            rBase = returnRandBase();
+                            } else {
+                            this.dna[r] = rBase;
+                            }
+                            return this;
+                            },
+                            compareDna(pAequor) {
+                            let matchingBase = 0;
+                            for (let i = 0; i < pAequor.dna.length; i++) { if (pAequor.dna[i]===this.dna[i]) { matchingBase++; } }
+                                console.log(matchingBase); let match=(matchingBase / this.dna.length) * 100; return ( "Specimen " +
+                                this.specimenNum + " and specimen " + pAequor.specimenNum + " have " + match.toFixed(2) + "% DNA in common" );
+                                }, willLikelySurvive() { let cgBases=0; for (let i=0; i < this.dna.length; i++) { if (this.dna[i]==="C" ||
+                                this.dna[i]==="G" ) { cgBases++; } } let surviveChance=((cgBases / this.dna.length) * 100).toFixed(2); return
+                                surviveChance>= 60 ? true : false;
+                                },
+                                complementStrand() {
+                                let complementStrand = [];
+                                for (let i = 0; i < this.dna.length; i++) { switch (this.dna[i]) { case "A" : complementStrand[i]="T" ; break;
+                                    case "T" : complementStrand[i]="A" ; break; case "C" : complementStrand[i]="G" ; break; case "G" :
+                                    complementStrand[i]="C" ; break; } } return complementStrand; }, }; }; /* let spec1=pAequorFactory(1,
+                                    mockUpStrand()); let spec2=pAequorFactory(2, mockUpStrand()); console.log(spec1); console.log(spec2);
+                                    console.log(spec1.willLikelySurvive()); let testingPool=[]; for (let i=1; i < 31; i++) {
+                                    testingPool.push(pAequorFactory(i, mockUpStrand())); } console.log(spec1.complementStrand()); */
+                    </code>
+                </pre>
+
+
+            </summary>
+            <summary class="project-title">
+                <h3>Challenge Project: Credit Card Checker</h3>
+                <p>A JavaScript project to check credit card numbers validity</p>
+                <button class="show-code">See the code</button>
+                <pre>
+                                <code>
+                                    // All valid credit card numbers
+                                    const valid1 = [4, 5, 3, 9, 6, 7, 7, 9, 0, 8, 0, 1, 6, 8, 0, 8];
+                                    const valid2 = [5, 5, 3, 5, 7, 6, 6, 7, 6, 8, 7, 5, 1, 4, 3, 9];
+                                    const valid3 = [3, 7, 1, 6, 1, 2, 0, 1, 9, 9, 8, 5, 2, 3, 6];
+                                    const valid4 = [6, 0, 1, 1, 1, 4, 4, 3, 4, 0, 6, 8, 2, 9, 0, 5];
+                                    const valid5 = [4, 5, 3, 9, 4, 0, 4, 9, 6, 7, 8, 6, 9, 6, 6, 6];
+                                    
+                                    // All invalid credit card numbers
+                                    const invalid1 = [4, 5, 3, 2, 7, 7, 8, 7, 7, 1, 0, 9, 1, 7, 9, 5];
+                                    const invalid2 = [5, 7, 9, 5, 5, 9, 3, 3, 9, 2, 1, 3, 4, 6, 4, 3];
+                                    const invalid3 = [3, 7, 5, 7, 9, 6, 0, 8, 4, 4, 5, 9, 9, 1, 4];
+                                    const invalid4 = [6, 0, 1, 1, 1, 2, 7, 9, 6, 1, 7, 7, 7, 9, 3, 5];
+                                    const invalid5 = [5, 3, 8, 2, 0, 1, 9, 7, 7, 2, 8, 8, 3, 8, 5, 4];
+                                    
+                                    // Can be either valid or invalid
+                                    const mystery1 = [3, 4, 4, 8, 0, 1, 9, 6, 8, 3, 0, 5, 4, 1, 4];
+                                    const mystery2 = [5, 4, 6, 6, 1, 0, 0, 8, 6, 1, 6, 2, 0, 2, 3, 9];
+                                    const mystery3 = [6, 0, 1, 1, 3, 7, 7, 0, 2, 0, 9, 6, 2, 6, 5, 6, 2, 0, 3];
+                                    const mystery4 = [4, 9, 2, 9, 8, 7, 7, 1, 6, 9, 2, 1, 7, 0, 9, 3];
+                                    const mystery5 = [4, 9, 1, 3, 5, 4, 0, 4, 6, 3, 0, 7, 2, 5, 2, 3];
+                                    
+                                    // An array of all the arrays above
+                                    const batch = [
+                                    valid1,
+                                    valid2,
+                                    valid3,
+                                    valid4,
+                                    valid5,
+                                    invalid1,
+                                    invalid2,
+                                    invalid3,
+                                    invalid4,
+                                    invalid5,
+                                    mystery1,
+                                    mystery2,
+                                    mystery3,
+                                    mystery4,
+                                    mystery5,
+                                    ];
+                                    
+                                    // Add your functions below:
+                                    const validateCred = (arr) => {
+                                    let luhnNum = 0;
+                                    let round = 0;
+                                    for (let i = arr.length - 1; i >= 0; i--) {
+                                    if (round % 2 !== 0) {
+                                    if (arr[i] * 2 > 9) {
+                                    luhnNum = luhnNum + (arr[i] * 2 - 9);
+                                    } else {
+                                    luhnNum = luhnNum + arr[i] * 2;
+                                    }
+                                    } else {
+                                    luhnNum = luhnNum + arr[i];
+                                    }
+                                    round++;
+                                    }
+                                    //console.log("Sum up: " + luhnNum);
+                                    let validity = luhnNum % 10 === 0 ? true : false;
+                                    //console.log("Card validity: " + validity);
+                                    return validity;
+                                    };
+                                    
+                                    const findInvalidCards = (arr) => {
+                                    let invalidCards = [];
+                                    for (let i = 0; i < arr.length; i++) { if (!validateCred(arr[i])) { invalidCards.push(arr[i]); } } return invalidCards;
+                                        }; const idInvalidCardCompanies=(arr)=> {
+                                        let cardCompanies = [
+                                        { digit: 3, company: "Amex" },
+                                        { digit: 4, company: "Visa" },
+                                        { digit: 5, company: "Mastercard" },
+                                        { digit: 6, company: "Discover" },
+                                        ];
+                                        let invalidCardCompanies = [];
+                                        for (let i = 0; i < arr.length; i++) { for (let j=0; j < cardCompanies.length; j++) if (
+                                            arr[i][0]===cardCompanies[j].digit && !invalidCardCompanies.includes(cardCompanies[j].company) ) {
+                                            invalidCardCompanies.push(cardCompanies[j].company); } } return invalidCardCompanies; };
+                                            console.log(idInvalidCardCompanies(findInvalidCards(batch))); // Missing "Company not found" check
+
+                                </code>
+                            </pre>
+            </summary>
+        </section>
+        <section id="skills">
+            <h2>Skills</h2>
         </section>
     </main>
 </body>

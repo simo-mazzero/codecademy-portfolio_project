@@ -1,7 +1,7 @@
 body {
     font-family: 'Roboto', sans-serif;
-    padding: 0 auto;
-    max-width: 1200px;
+    padding: 0 16px;
+    max-width: 900px;
     margin: 0 auto;
     display: flex;
     flex-direction: column;
@@ -64,4 +64,64 @@ details {
     background-color: #323232;
     color: whitesmoke;
     border-radius: 12px;
+}
+
+.fab {
+    font-family: "Font Awesome 5 Brands";
+    font-weight: 400;
+}
+
+.skill-list {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+}
+
+.skill {
+    margin-bottom: 2em;
+    padding: 1.5em 0;
+    text-align: left;
+}
+
+@media only screen and (min-width: 480px) and (max-width: 767px) {
+    .skill {
+        width: 50%;
+    }
+}
+
+@media only screen and (min-width: 768px) and (max-width: 1023px) {
+    .skill {
+        width: 50%;
+    }
+}
+
+@media only screen and (min-width: 1024px) {
+    .skill {
+        width: 33.3%;
+    }
+}
+
+.skill {
+    width: ;
+}
+
+.skill i {
+    color: #323232;
+    font-size: 50px;
+    margin-bottom: .2em;
+}
+
+.skill-bar {
+    background: #ccc;
+    display: block;
+    height: 5px;
+    width: 100%;
+}
+
+.skill-percentage {
+    background: #e63550;
+    display: inherit;
+    height: inherit;
+    position: relative;
+    width: auto;
 }

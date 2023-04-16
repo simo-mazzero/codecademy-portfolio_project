@@ -1,0 +1,179 @@
+body {
+    font-family: 'Roboto', sans-serif;
+    margin: 0 auto;
+}
+
+nav {
+    display: flex;
+    align-items: center;
+    position: sticky;
+    top: 0px;
+    background-color: rgb(31, 81, 230);
+    width: 100%;
+    color: #fcfcfc;
+}
+
+main {
+    display: flex;
+    flex-direction: column;
+    box-sizing: content-box;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 16px;
+}
+
+section {
+    padding: 16px 0;
+}
+
+a {
+    color: #323232;
+    text-decoration: none;
+    font-weight: 500;
+}
+
+details {
+    cursor: pointer;
+    padding: 12px 0;
+}
+
+.navbar {
+    padding-right: 1em;
+    display: flex;
+    list-style-type: none;
+    align-items: center;
+    margin-left: auto;
+}
+
+.toggle-nav {
+    display: none;
+}
+
+
+@media screen and (max-width: 767px) {
+    #nav-list {
+        display: none;
+    }
+}
+
+@media screen and (min-width: 768px) {
+    #nav-list {
+        display: flex;
+    }
+}
+
+
+@media screen and (max-width: 767px) {
+    .navbar>.icon {
+        display: flex;
+    }
+
+    i.fa-bars {
+        font-size: 1.5em;
+    }
+}
+
+@media screen and (min-width: 768px) {
+    .navbar>.icon {
+        display: none;
+    }
+}
+
+.navbar a {
+    color: #fcfcfc;
+}
+
+.nav-item {
+    margin: 8px;
+}
+
+#logo {
+    padding-left: 1em;
+}
+
+.portrait {
+    width: 300px;
+    height: 450px;
+    border-radius: 12px;
+    flex-shrink: 1;
+    object-fit: cover;
+    margin: 1em auto;
+}
+
+.about-me-container {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.about-me-text-container {
+    margin-right: 16px;
+}
+
+.project-title h3 {
+    display: inline;
+}
+
+.code {
+    display: flex;
+    background-color: #323232;
+    color: whitesmoke;
+    border-radius: 12px;
+}
+
+.fab {
+    font-family: "Font Awesome 5 Brands";
+    font-weight: 400;
+}
+
+.skill-list {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    align-items: center;
+}
+
+.skill {
+    margin-bottom: 2em;
+    margin: auto;
+    padding: 1em;
+    text-align: left;
+}
+
+@media only screen and (max-width: 767px) {
+    .skill {
+        width: 40%;
+    }
+}
+
+@media only screen and (min-width: 768px) {
+    .skill {
+        width: 27%;
+    }
+}
+
+.skill i {
+    color: #323232;
+    font-size: 50px;
+    margin-bottom: .2em;
+}
+
+.skill-bar {
+    background: #ccc;
+    display: block;
+    height: 5px;
+    width: 100%;
+}
+
+.skill-percentage {
+    background: #e63550;
+    display: inherit;
+    height: inherit;
+    position: relative;
+    width: auto;
+}
+
+footer {
+    background-color: rgb(31, 81, 230);
+    padding: 1em;
+    color: #fcfcfc;
+}

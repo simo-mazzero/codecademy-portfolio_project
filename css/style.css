@@ -6,11 +6,14 @@ body {
 nav {
     display: flex;
     align-items: center;
-    position: sticky;
     top: 0px;
     background-color: rgb(31, 81, 230);
     width: 100%;
     color: #fcfcfc;
+}
+
+nav#sticky {
+    position: sticky;
 }
 
 main {
@@ -23,7 +26,13 @@ main {
 }
 
 section {
-    padding: 16px 0;
+    padding: 16px;
+}
+
+@media screen and (max-width: 767px) {
+    section {
+        margin: auto;
+    }
 }
 
 a {
@@ -38,50 +47,79 @@ details {
 }
 
 .navbar {
-    padding-right: 1em;
+    padding-right: 2em;
     display: flex;
     list-style-type: none;
-    align-items: center;
     margin-left: auto;
-}
-
-.toggle-nav {
-    display: none;
-}
-
-
-@media screen and (max-width: 767px) {
-    #nav-list {
-        display: none;
-    }
-}
-
-@media screen and (min-width: 768px) {
-    #nav-list {
-        display: flex;
-    }
-}
-
-
-@media screen and (max-width: 767px) {
-    .navbar>.icon {
-        display: flex;
-    }
-
-    i.fa-bars {
-        font-size: 1.5em;
-    }
-}
-
-@media screen and (min-width: 768px) {
-    .navbar>.icon {
-        display: none;
-    }
+    flex-direction: column;
 }
 
 .navbar a {
     color: #fcfcfc;
 }
+
+.icon {
+    color: #fcfcfc;
+    display: flex;
+    margin-right: 1em;
+    position: relative;
+}
+
+#hidden-menu {
+    margin: auto;
+}
+
+#toggle-nav {
+    display: none;
+    align-items: center;
+}
+
+#toggle-nav a {
+    margin: auto;
+    width: 100%;
+    color: white;
+    padding: 14px 16px;
+    text-decoration: none;
+    font-size: 17px;
+    display: flex;
+    text-align: center;
+    padding-bottom: 1em;
+}
+
+@media screen and (max-width: 767px) {
+    #nav-list {
+        display: none;
+        list-style-type: none;
+    }
+}
+
+@media screen and (min-width: 768px) {
+    #nav-list {
+        display: flex;
+        list-style-type: none;
+    }
+}
+
+
+@media screen and (max-width: 767px) {
+    .icon {
+        display: flex;
+        margin: auto;
+    }
+
+    i.fa {
+        font-size: 1.5em;
+    }
+}
+
+@media screen and (min-width: 768px) {
+    .icon {
+        display: none;
+        margin: 0 auto;
+    }
+}
+
+
 
 .nav-item {
     margin: 8px;
@@ -91,8 +129,24 @@ details {
     padding-left: 1em;
 }
 
+.about-me-container {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.about-me-text-container {
+    margin: auto;
+    width: 60%;
+    min-width: 50%;
+}
+
+.about-me-img-container {
+    min-width: 30%;
+    margin: auto;
+}
+
 .portrait {
-    width: 300px;
+    min-width: 300px;
     height: 450px;
     border-radius: 12px;
     flex-shrink: 1;
@@ -100,24 +154,21 @@ details {
     margin: 1em auto;
 }
 
-.about-me-container {
-    display: flex;
-    flex-wrap: wrap;
-}
-
-.about-me-text-container {
-    margin-right: 16px;
+#projects {
+    margin-right: auto;
 }
 
 .project-title h3 {
     display: inline;
 }
 
-.code {
+code {
     display: flex;
+    flex-direction: row;
     background-color: #323232;
     color: whitesmoke;
     border-radius: 12px;
+    overflow: auto;
 }
 
 .fab {
@@ -151,7 +202,7 @@ details {
     }
 }
 
-.skill i {
+i.fab {
     color: #323232;
     font-size: 50px;
     margin-bottom: .2em;
@@ -170,6 +221,10 @@ details {
     height: inherit;
     position: relative;
     width: auto;
+}
+
+.contact-list a {
+    margin: 0 1em;
 }
 
 footer {

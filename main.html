@@ -12,33 +12,39 @@
 </head>
 
 <body>
-    <nav>
+    <nav id="sticky">
         <h2 id="logo">Simone Mazzero</h2>
-        <ul class="navbar">
-            <div id="nav-list">
-                <li class="nav-item">
-                    <a href="#about-me">About me</a>
-                </li>
-                <li class="nav-item">
-                    <a href="#projects">Projects</a>
-                </li>
-                <li class="nav-item">
-                    <a href="#skills">Skills</a>
-                </li>
-                <li class="nav-item">
-                    <a href="./contacts.html">Contacts</a>
-                </li>
+        <div class="navbar">
+            <a href="javascript:void(0);" class="icon" onclick="toggleNav()">
+                <i id="icon" class="fa fa-bars"></i>
+            </a>
+            <div id="clear-menu">
+                <ul id="nav-list">
+                    <li class="nav-item">
+                        <a href="#about-me">About me</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#projects">Projects</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#skills">Skills</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="./contacts.html">Contacts</a>
+                    </li>
+                </ul>
             </div>
-            <div class="toggle-nav">
+        </div>
+        </div>
+    </nav>
+    <nav>
+        <div id="hidden-menu">
+            <div id="toggle-nav">
                 <a href="#about-me">About me</a>
                 <a href="#projects">Projects</a>
                 <a href="#skills">Skills</a>
                 <a href="./contacts.html">Contacts</a>
             </div>
-            <a href="javascript:void(0);" class="icon" onclick="toggleNav()">
-                <i class="fa fa-bars"></i>
-            </a>
-        </ul>
     </nav>
     <main>
         <section id="about-me">
@@ -46,26 +52,37 @@
                 <div class="about-me-text-container">
                     <h2>About me</h2>
                     <p>Hi there, stranger!</p>
-                    <p>I'm Simone, a 28 y.o. from Italy just starting with his journey in programming! I have started
+                    <p>I'm Simone, a 28 y.o. from Italy just starting with his journey in programming! I have
+                        started
                         coding
-                        very recently, and the more I learn about coding, the more I get confused about this vast world!
+                        very recently, and the more I learn about coding, the more I get confused about this vast
+                        world!
                     </p>
-                    <p>My backgroun is in Architecture, so programming did not come naturally to me. I got interested in
+                    <p>My background is in Architecture, so programming did not come naturally to me. I got
+                        interested
+                        in
                         the
                         subject by exploring different job opportunities and getting in contact more and more with
                         technical
-                        topics. After I while, curiosity got me, and thus I decided to begin learning about programming!
+                        topics. After I while, curiosity got me, and thus I decided to begin learning about
+                        programming!
                     </p>
-                    <p>My first encounter with this world, as for many others, was with Python! At the beginning things
-                        didn't make sense, but after grasping the basics, I discovered what a pleasant sensation it is
+                    <p>My first encounter with this world, as for many others, was with Python! At the beginning
+                        things
+                        didn't make sense, but after grasping the basics, I discovered what a pleasant sensation it
+                        is
                         to
                         solve a problem with coding!</p>
-                    <p>Now I'm interested in figuring out how the Web works, making something from scratch with my own
-                        hands! That's why I'm taking Codecademy Front-End Engineer Career Path! This is one of my early
+                    <p>Now I'm interested in figuring out how the Web works, making something from scratch with my
+                        own
+                        hands! That's why I'm taking Codecademy Front-End Engineer Career Path! This is one of my
+                        early
                         works, hope you don't judge it too harshly</p>
 
                 </div>
-                <img src="./images/myself.jpg" alt="A picture of myself in the mountains" class="portrait">
+                <div class="about-me-img-container">
+                    <img src="./images/myself.jpg" alt="A picture of myself in the mountains" class="portrait">
+                </div>
             </div>
         </section>
         <section id="projects">
@@ -255,6 +272,18 @@
                         <div class="skill-percentage" style="width: 25%;"></div>
                     </div>
                 </div>
+            </div>
+        </section>
+        <section id="#contacts">
+            <h2>Contacts</h2>
+            <p>Want to chat with me? You are welcome to get in touch here:</p>
+            <div class="contact-list">
+                <a href="https://github.com/simo-mazzero" target="_blank">
+                    <i class="fab fa-github"></i>
+                </a>
+                <a href="https://www.linkedin.com/in/simone-mazzero/" target="_blank">
+                    <i class="fab fa-linkedin"></i>
+                </a>
             </div>
         </section>
     </main>
